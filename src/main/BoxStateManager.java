@@ -14,6 +14,14 @@ public class BoxStateManager {
         this.boxItemCounts = boxItemCounts;
     }
 
+    /*
+    Merges two parsed files together, after which it will sort the resulting list by date and restructure it.
+    Restructuring is being carried out with the help of HashMap, which contains previous state for each found
+    box ID (dateTime, color and itemsCount).
+    That allows us to fill the 'null' gaps by taking necessary information from the previous box state, and also
+    helps in removing duplicate entries with the same dateTime.
+    At the end list is being sorted by id and dateTime for the convenience.
+    */
     public void fillStates() {
         boxState = new ArrayList<>(boxColors);
         boxState.addAll(boxItemCounts);

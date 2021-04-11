@@ -15,6 +15,7 @@ public class Parser {
         this.itemsCountPath = itemsCountPath;
     }
 
+    // Parses ColorLog file as BoxState objects by adding 'null' into the ItemsCount section
     public List<BoxState> readColors() {
         List<BoxState> colorsResult = new ArrayList<>();
         try {
@@ -36,6 +37,7 @@ public class Parser {
         return colorsResult;
     }
 
+    // Parses ItemsCount file as BoxState objects by adding 'null' into the Color section
     public List<BoxState> readItemsCount() {
         List<BoxState> itemsCountResult = new ArrayList<>();
         try {
